@@ -11,11 +11,11 @@ export const workIcons = {
 
 export const work = [
   {
-    title: "Senior Software Engineer",
-    company: "Acme Cloud",
-    region: "United States",
+    title: "Administrative Assistant",
+    company: "MedVital",
+    region: "Colombia - United States",
     description:
-      "Led the design and delivery of a multi‑tenant platform, decomposed critical monolith paths into services, improved p95 latency by 40%, defined SLOs and on‑call rotations, and mentored junior engineers.",
+      "Managed and optimized cost administration processes to improve efficiency in the company’s budget control, while coordinating and scheduling appointments to ensure proper workflow and meet client expectations regarding time and services. Additionally, developed skills in specialized management and scheduling software, adapting to the demands of an international company.",
     technologies: [
       "TypeScript",
       "Node.js",
