@@ -1,27 +1,26 @@
 export const studies = [
   {
-    title: "B.S. in Computer Science",
-    institution: "State University",
+    title: "System Engineer",
+    institution: "Universidad Santiago de Cali",
     description:
-      "Core CS foundations: data structures, algorithms, operating systems, networking, and databases; team capstone in web systems.",
+      "Focused on technology, problem-solving, and the development of efficient digital solutions. Academic training includes areas such as networking, software development, databases, and information systems, providing a strong foundation for tackling real-world challenges in the IT field.",
     tags: [
       "Algorithms",
       "Data Structures",
       "Operating Systems",
       "Databases",
-      "Networking",
     ],
   },
   {
-    title: "M.S. in Software Engineering",
-    institution: "Tech Institute",
+    title: "Software programming technician",
+    institution: "SENA",
     description:
-      "Focus on distributed systems, testing strategies, and cloud architecture; thesis on resilience patterns in microservices.",
+      "trained in software development, database management, and application design. The program provides solid technical skills in programming logic, coding best practices, and problem-solving, preparing for the creation of functional and efficient digital solutions.",
     tags: [
-      "Distributed Systems",
-      "Cloud Architecture",
-      "Testing",
-      "Microservices",
+      "Frontend Developer",
+      "Web Development",
+      "Technology",
+      "Creative Design",
     ],
   },
 ];
