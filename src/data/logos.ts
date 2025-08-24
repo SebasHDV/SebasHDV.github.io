@@ -24,6 +24,8 @@ function toNiceName(filePath: string): string {
   return trimmed.replace(/\b\w/g, (m) => m.toUpperCase());
 }
 
+const allowedLogos = ["N8n.logo"];
+
 export const logos: LogoItem[] = Object.entries(modules)
   .map(([path, url]) => ({ name: toNiceName(path), logo: url as string }))
   // Keep only a stable subset first (you can remove slice to include all)
