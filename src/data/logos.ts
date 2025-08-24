@@ -13,24 +13,22 @@ type LogoItem = { name: string; logo: string };
 function toNiceName(filePath: string): string {
   const base = filePath.split('/').pop() || '';
   const withoutExt = base.replace(/\.[^.]+$/, '');
-  // strip trailing "-logo" or "logo" (case-insensitive)
   const withoutLogo = withoutExt.replace(/-?logo$/i, '');
-  // normalize separators to spaces
   const normalized = withoutLogo.replace(/[_-]+/g, ' ');
-  // insert space between camelCase words: GoogleAds -> Google Ads
   const spaced = normalized.replace(/([a-z])([A-Z])/g, '$1 $2');
   const trimmed = spaced.trim().replace(/\s{2,}/g, ' ');
-  // Title case each word
   return trimmed.replace(/\b\w/g, (m) => m.toUpperCase());
 }
 
-const allowedLogos = ["N8n.logo"];
+// 👇 Cambia aquí los nombres según necesites
+const allowedLogos = ["N8n-logo"]; 
 
 export const logos: LogoItem[] = Object.entries(modules)
   .map(([path, url]) => ({ name: toNiceName(path), logo: url as string }))
-  // Keep only a stable subset first (you can remove slice to include all)
+  .filter(item => allowedLogos.includes(item.name)) // 👈 esta línea es la clave
   .sort((a, b) => a.name.localeCompare(b.name));
 
 export type { LogoItem };
+
 
 
