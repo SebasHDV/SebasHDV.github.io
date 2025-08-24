@@ -21,7 +21,7 @@ function toNiceName(filePath: string): string {
 }
 
 // 👇 Cambia aquí los nombres según necesites
-const allowedLogos = ["N8n-logo"]; 
+const allowedLogos = ["N8n"]; 
 
 export const logos: LogoItem[] = Object.entries(modules)
   .map(([path, url]) => ({ name: toNiceName(path), logo: url as string }))
