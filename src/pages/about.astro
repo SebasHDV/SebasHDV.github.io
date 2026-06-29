@@ -1,27 +1,38 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
-import GlowLineSeparator from '@/components/ui/separator/GlowLineSeparator.astro';
-const pageTitle = 'About Me';
-const pageDescription = 'Learn more about my background and approach to software engineering.';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/sections/Header.astro';
+import Footer from '../components/sections/Footer.astro';
+import GlowLineSeparator from '../components/ui/separator/GlowLineSeparator.astro';
+
+const pageTitle = 'Sobre mí — Sebastian Hernandez';
+const pageDescription = 'Conoce más sobre mi trayectoria, formación y proyectos en desarrollo de software.';
 ---
 
-<Layout title={pageTitle} description={pageDescription} pubDate={new Date()} showHeader={false}>
-  <p>
-    Hey! I'm a senior software engineer who loves designing reliable systems and shipping products that feel great to use.
-  </p>
-  <p>
-    I work across the stack with TypeScript, Node.js, React/Next.js, and PostgreSQL. I care deeply about readable code,
-    strong tests, and observability. My approach: ship small, iterate quickly, measure outcomes.
-  </p>
-  <p>
-    Recent highlights include leading a migration from a monolith to well‑scoped services, improving p95 latency,
-    and introducing CI/CD with preview environments and quality gates.
-  </p>
-  <p>
-    Outside of feature work, I enjoy mentoring, documentation, and building design‑system components that make teams faster.
-    Always learning—and always happy to collaborate on meaningful problems.
-  </p>
-
-  <GlowLineSeparator />
-
-</Layout>
+<!doctype html>
+<html lang="es" data-theme="dark" class="dark">
+  <head>
+    <BaseHead title={pageTitle} description={pageDescription} />
+  </head>
+  <body>
+    <Header />
+    <main class="mx-auto max-w-3xl px-4 py-16">
+      <h1 class="text-3xl font-bold mb-8">Sobre mí</h1>
+      <div class="prose prose-invert max-w-none space-y-4 text-[color:var(--color-text-secondary)]">
+        <p>
+          ¡Hola! Soy Sebastian Hernandez, estudiante de Ingeniería de Sistemas en la Universidad Santiago de Cali y técnico en Programación de Software del SENA.
+        </p>
+        <p>
+          Me apasiona el desarrollo Frontend: construir interfaces modernas, rápidas y accesibles con React, Next.js y TypeScript. También tengo experiencia en el backend con Node.js, PostgreSQL y Supabase, lo que me permite trabajar en proyectos full-stack de principio a fin.
+        </p>
+        <p>
+          He desarrollado proyectos como <strong>BodyFit</strong> (plataforma web de gestión de gimnasio), <strong>El Raco</strong> (e-commerce con panel admin), y colaboré activamente en <strong>Living Sports</strong>, una app móvil fitness construida con React Native y Expo.
+        </p>
+        <p>
+          Busco constantemente aprender, colaborar en proyectos reales y contribuir con soluciones digitales que generen impacto. Si tienes un proyecto interesante en mente, con gusto hablamos.
+        </p>
+      </div>
+      <GlowLineSeparator />
+    </main>
+    <Footer />
+  </body>
+</html>
