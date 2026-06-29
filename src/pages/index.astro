@@ -1,4 +1,4 @@
----
+﻿---
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/sections/Footer.astro';
 import Header from '../components/sections/Header.astro';
@@ -10,32 +10,21 @@ import WorkExperience from '../components/sections/WorkExperience.astro';
 import { work } from '../data/work';
 import Studies from '../components/sections/Studies.astro';
 import { studies } from '../data/studies';
-import Carousel from '../components/ui/carousel/Carousel.astro';
 import { logos } from '../data/logos';
 import ArrowSeparator from '../components/ui/separator/ArrowSeparator.astro'
 import GlowLineSeparator from '../components/ui/separator/GlowLineSeparator.astro'
-
-// Logos
-import astroLogo from '../assets/logos/Astro-logo.svg';
-import googleAdsLogo from '../assets/logos/GoogleAds-logo.svg';
-import posthogLogo from '../assets/logos/posthog-logo.svg';
-import notionLogo from '../assets/logos/Notion-logo.svg';
-import figmaLogo from '../assets/logos/Figma-logo.svg';
-
-// skills are imported from src/data/skills
+import ZoomScroll from '../components/sections/ZoomScroll.astro'
 ---
 
 <!doctype html>
 <html lang="en" data-theme="dark" class="dark">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <!-- JSON-LD: Organization -->
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
-      '@type': 'Organization',
+      '@type': 'Person',
       name: 'Sebastian Hernandez',
       url: new URL('/', Astro.site).toString(),
-      logo: new URL('/favicon.svg', Astro.site).toString(),
       sameAs: [
         'https://github.com/SebasHDV',
         'https://www.linkedin.com/in/sebastian-hdv/',
@@ -43,6 +32,7 @@ import figmaLogo from '../assets/logos/Figma-logo.svg';
     })} />
 	</head>
 	<body>
+		<ZoomScroll />
 		<Header />
 		<main>
       <HeroSection
@@ -51,17 +41,15 @@ import figmaLogo from '../assets/logos/Figma-logo.svg';
         showCTA
         primaryCTA={{ text: 'View Projects', href: '/portfolio' }}
       />
-     
-
-    <section class="py-6">
-      <ArrowSeparator />
-      <SkillsSection title="Skills & Tools" skills={skills} />   
-      <ArrowSeparator />
-      <WorkExperience title="Work Experience" items={work} />
-      <ArrowSeparator />
-      <Studies title="Studies" items={studies} />
-      <GlowLineSeparator />
-    </section>
+      <section class="py-6">
+        <ArrowSeparator />
+        <SkillsSection title="Skills & Tools" skills={skills} />
+        <ArrowSeparator />
+        <WorkExperience title="Work Experience" items={work} />
+        <ArrowSeparator />
+        <Studies title="Studies" items={studies} />
+        <GlowLineSeparator />
+      </section>
 		</main>
 		<Footer />
 	</body>
